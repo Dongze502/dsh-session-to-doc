@@ -122,14 +122,16 @@ git push -u origin main
 `package.json` 里已经接好 `prepack`（发布前自动 `tsc` 构建），所以发布前**不要**手动删 `lib/`：
 
 ```bash
-npm login                                    # 浏览器/一次性密码验证
-npm publish                                  # prepack 自动跑 build，然后打包 lib/ client/ README LICENSE
+npm login --registry=https://registry.npmjs.org/   # 浏览器/一次性密码验证
+npm publish                                        # prepack 自动跑 build，然后打包 lib/ client/ README LICENSE
 ```
+
+> **本机的 `~/.npmrc` 把 registry 指向了 `registry.npmmirror.com`（只读镜像）。** 镜像不接受登录与发布，所以 `npm login` / `npm publish` 必须显式指回 npmjs；上面 `publishConfig.registry` 已经保证 `npm publish` 走官方源，`npm login` 仍需带参数。
 
 验收：
 
 ```bash
-npm view dsh-session-to-doc version          # 应该输出 0.2.2
+npm view dsh-session-to-doc version --registry=https://registry.npmjs.org/   # 应该输出 0.2.2
 dsh plugin --profile web add dsh-session-to-doc   # 任意一台装了 dsh 的机器
 ```
 
