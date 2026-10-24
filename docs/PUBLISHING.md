@@ -28,8 +28,8 @@
 需要两样东西，都免费：
 
 1. **GitHub 账号**（必须）——仓库和 PR 都在这里。
-   - ✅ 已注册：**DongZe502**（本指南里所有命令都已按这个用户名填好，可直接复制）。
-   - 这个用户名会进入：仓库地址 `https://github.com/DongZe502/dsh-session-to-doc`、投稿文件名 `DongZe502__dsh-session-to-doc.yml`。之后改用户名会让投稿文件名对不上，**先想好再注册**。
+   - ✅ 已注册：**Dongze502**（本指南里所有命令都已按这个用户名填好，可直接复制）。
+   - 这个用户名会进入：仓库地址 `https://github.com/Dongze502/dsh-session-to-doc`、投稿文件名 `Dongze502__dsh-session-to-doc.yml`。之后改用户名会让投稿文件名对不上，**先想好再注册**。
    - 建议顺手开 2FA（Settings → Password and authentication），不开也能用，但提 PR 时可能被要求验证。
 2. **npm 账号**（可选，但强烈推荐）——见第 4 步的原因。
    - 打开 <https://www.npmjs.com/signup> 注册；本地 `npm login` 登录。
@@ -51,23 +51,23 @@
 | `.gitignore` | 忽略 `node_modules/`、`.pnpm-store/`、`.pnpm-cache/`、`*.tsbuildinfo` |
 | `pnpm-lock.yaml` / `pnpm-workspace.yaml` | CI 用 `--frozen-lockfile` 装依赖 |
 
-以下两处已按 `DongZe502` 填好（已写入 `package.json` 与 `README.md`，无需再改）：
+以下两处已按 `Dongze502` 填好（已写入 `package.json` 与 `README.md`，无需再改）：
 
 1. `package.json` 加仓库地址（放在 `"publishConfig"` 之前）：
 
    ```jsonc
    "repository": {
      "type": "git",
-     "url": "git+https://github.com/DongZe502/dsh-session-to-doc.git"
+     "url": "git+https://github.com/Dongze502/dsh-session-to-doc.git"
    },
-   "homepage": "https://github.com/DongZe502/dsh-session-to-doc#readme",
-   "bugs": { "url": "https://github.com/DongZe502/dsh-session-to-doc/issues" }
+   "homepage": "https://github.com/Dongze502/dsh-session-to-doc#readme",
+   "bugs": { "url": "https://github.com/Dongze502/dsh-session-to-doc/issues" }
    ```
 
-2. 可选：README 顶部加一行徽章（把 `DongZe502` 换掉）：
+2. 可选：README 顶部加一行徽章（把 `Dongze502` 换掉）：
 
    ```markdown
-   [![CI](https://github.com/DongZe502/dsh-session-to-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/DongZe502/dsh-session-to-doc/actions/workflows/ci.yml)
+   [![CI](https://github.com/Dongze502/dsh-session-to-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/Dongze502/dsh-session-to-doc/actions/workflows/ci.yml)
    ```
 
 ## 3. 建仓库并推送
@@ -92,7 +92,7 @@ git config user.email "<你的邮箱>"
 git add -A
 git commit -m "feat: session-to-doc — reorganize a session into a structured Markdown document"
 
-git remote add origin https://github.com/DongZe502/dsh-session-to-doc.git
+git remote add origin https://github.com/Dongze502/dsh-session-to-doc.git
 git push -u origin main
 ```
 
@@ -149,26 +149,26 @@ dsh plugin --profile web add dsh-session-to-doc   # 任意一台装了 dsh 的�
 
 ### 5.1 fork + clone
 
-网页上打开 <https://github.com/awesome-dsh-plugin/awesome-dsh-plugin> → 右上 Fork → 得到 `DongZe502/awesome-dsh-plugin`。
+网页上打开 <https://github.com/awesome-dsh-plugin/awesome-dsh-plugin> → 右上 Fork → 得到 `Dongze502/awesome-dsh-plugin`。
 
 ```bash
-git clone https://github.com/DongZe502/awesome-dsh-plugin.git
+git clone https://github.com/Dongze502/awesome-dsh-plugin.git
 cd awesome-dsh-plugin
 git checkout -b add-dsh-session-to-doc
 ```
 
 ### 5.2 只加一个文件
 
-新建 `data/plugins/DongZe502__dsh-session-to-doc.yml`（**文件名 = 仓库 owner + `__` + 仓库名**，全小写，与本仓库目录名一致）：
+新建 `data/plugins/Dongze502__dsh-session-to-doc.yml`（**文件名 = 仓库 owner + `__` + 仓库名**，全小写，与本仓库目录名一致）：
 
 ```yaml
-url: https://github.com/DongZe502/dsh-session-to-doc
-name: DongZe502/dsh-session-to-doc
+url: https://github.com/Dongze502/dsh-session-to-doc
+name: Dongze502/dsh-session-to-doc
 category: tools
 description:
   en: Reorganizes a DeepSeek Harness session transcript into a structured Markdown document with an outline and table of contents, instead of exporting the chat in chronological order; available as a model tool, a composer button and a loopback-only Web endpoint.
   zh: 把 DSH 当前会话的对话记录重组成带大纲、章节层级和目录的结构化 Markdown 文档，而不是按时间顺序原样导出；同时提供模型工具、输入框按钮与仅回环的 Web 接口三种入口。
-icon: https://raw.githubusercontent.com/DongZe502/dsh-session-to-doc/main/assets/icon-180.png
+icon: https://raw.githubusercontent.com/Dongze502/dsh-session-to-doc/main/assets/icon-180.png
 ```
 
 说明：
@@ -186,7 +186,7 @@ icon: https://raw.githubusercontent.com/DongZe502/dsh-session-to-doc/main/assets
 ### 5.3 提交 PR
 
 ```bash
-git add data/plugins/DongZe502__dsh-session-to-doc.yml
+git add data/plugins/Dongze502__dsh-session-to-doc.yml
 git commit -m "Add dsh-session-to-doc"
 git push origin add-dsh-session-to-doc
 ```

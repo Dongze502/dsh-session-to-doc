@@ -74,10 +74,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DongZe502/dsh-session-to-doc.git"
+    "url": "git+https://github.com/Dongze502/dsh-session-to-doc.git"
   },
-  "homepage": "https://github.com/DongZe502/dsh-session-to-doc#readme",
+  "homepage": "https://github.com/Dongze502/dsh-session-to-doc#readme",
   "bugs": {
-    "url": "https://github.com/DongZe502/dsh-session-to-doc/issues"
+    "url": "https://github.com/Dongze502/dsh-session-to-doc/issues"
   }
 }

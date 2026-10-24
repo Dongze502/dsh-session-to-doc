@@ -1,7 +1,7 @@
 # dsh-session-to-doc
 
 [![npm](https://img.shields.io/npm/v/dsh-session-to-doc?color=0f172a)](https://www.npmjs.com/package/dsh-session-to-doc)
-[![CI](https://github.com/DongZe502/dsh-session-to-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/DongZe502/dsh-session-to-doc/actions/workflows/ci.yml)
+[![CI](https://github.com/Dongze502/dsh-session-to-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/Dongze502/dsh-session-to-doc/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-0ea5e9.svg)](./LICENSE)
 [![DSH](https://img.shields.io/badge/DSH-0.2.0--rc.2-6366f1.svg)](#版本与契约适用性)
 
