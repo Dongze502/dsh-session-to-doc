@@ -169,6 +169,7 @@ description:
   en: Reorganizes a DeepSeek Harness session transcript into a structured Markdown document with an outline and table of contents, instead of exporting the chat in chronological order; available as a model tool, a composer button and a loopback-only Web endpoint.
   zh: 把 DSH 当前会话的对话记录重组成带大纲、章节层级和目录的结构化 Markdown 文档，而不是按时间顺序原样导出；同时提供模型工具、输入框按钮与仅回环的 Web 接口三种入口。
 icon: https://raw.githubusercontent.com/Dongze502/dsh-session-to-doc/main/assets/icon-180.png
+tarball: https://github.com/Dongze502/dsh-session-to-doc/releases/latest/download/dsh-session-to-doc.tgz
 ```
 
 说明：
@@ -180,6 +181,7 @@ icon: https://raw.githubusercontent.com/Dongze502/dsh-session-to-doc/main/assets
 - `category` 从这组里挑最贴切的（选不准不会被打回，维护者会改）：
   `agi` `ui` `usage` `theme` `model` `identity` `session` `memory` `tools` `wsl` `browser` `vision` `voice` `docs` `skill` `workflow` `git` `notify` `dev` `security` `remote` `market` `fun`
   本插件是「一个整理会话的工具 + 一个按钮」，`tools` 最稳妥（备选 `docs`、`session`）。
+- `tarball` 指向本仓库 Release 里的**预构建 tgz**（文件名不带版本号，配合 `latest/download/` 才能长期有效）；这样即使不发 npm，市场也会用 `dsh plugin add "<tarball url>"` 安装。
 - `icon` 必须是 **GitHub 托管的位图**（png/jpg/webp），SVG 和第三方图床会被拒。上面用的是 raw.githubusercontent.com 直链，卡片按 ~96px 显示。
 - **描述必须属实**：投稿会对着源码核对。别写"支持 X 种格式"之类不存在的能力；本插件真实能力就是三种入口 + 两轮模型调用 + 确定性 TOC。
 
