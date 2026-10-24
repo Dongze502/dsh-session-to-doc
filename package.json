@@ -71,5 +71,13 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DongZe502/dsh-session-to-doc.git"
+  },
+  "homepage": "https://github.com/DongZe502/dsh-session-to-doc#readme",
+  "bugs": {
+    "url": "https://github.com/DongZe502/dsh-session-to-doc/issues"
   }
 }

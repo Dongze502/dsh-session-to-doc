@@ -1,5 +1,10 @@
 # dsh-session-to-doc
 
+[![npm](https://img.shields.io/npm/v/dsh-session-to-doc?color=0f172a)](https://www.npmjs.com/package/dsh-session-to-doc)
+[![CI](https://github.com/DongZe502/dsh-session-to-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/DongZe502/dsh-session-to-doc/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-MIT-0ea5e9.svg)](./LICENSE)
+[![DSH](https://img.shields.io/badge/DSH-0.2.0--rc.2-6366f1.svg)](#版本与契约适用性)
+
 把当前会话中一段又长又散的对话，**重新组织**成一份带大纲、章节层级和目录的结构化 Markdown 文档——而不是按时间顺序原样导出。
 
 这是一个 DSH（DeepSeek Harness）插件，同时提供三种入口，三者共用同一套编排代码：
