@@ -1,0 +1,4 @@
+# Adds only the dsh-session-to-doc tool row; no DSH component is replaced.
+- insert:
+    - id: dsh-session-to-doc
+      name: dsh-session-to-doc

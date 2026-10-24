@@ -1,0 +1,75 @@
+{
+  "name": "dsh-session-to-doc",
+  "version": "0.2.2",
+  "description": "DSH plugin: reorganize the current session transcript into a structured Markdown document with an outline and table of contents — as a model tool, a composer button, and a Web endpoint.",
+  "license": "MIT",
+  "author": "dsh-session-to-doc contributors",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "markdown",
+    "documentation",
+    "session",
+    "outline",
+    "toc"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/dsh-llm": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-session": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-tools": "0.2.0-rc.2",
+    "typescript": "5.9.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/session-to-doc.test.mjs",
+    "smoke": "node scripts/client-smoke.mjs",
+    "verify": "npm run build && npm test && npm run smoke",
+    "prepack": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.7.0 --activate
+
+      # `--node-linker=hoisted` mirrors the documented local setup: the tests load
+      # the real @deepseek-ai/dsh-tools to compile the same DSL as an oracle, and
+      # the default pnpm junction layout cannot resolve its transitive peers from
+      # a plain Node ESM import.
+      - name: Install
+        run: pnpm install --node-linker=hoisted --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Host half tests
+        run: pnpm test
+
+      - name: Client half smoke test
+        run: pnpm run smoke
+
+      - name: Client syntax check
+        run: node --check client/client.js
+
+      # A host-only bundle must not import the harness at runtime: the host does
+      # not expose @deepseek-ai/* to plugin packages, so any such import fails to
+      # resolve at load time and the plugin shows as "failed to enable".
+      - name: Bundle has no runtime @deepseek-ai import
+        run: |
+          if grep -nE "^\s*(import|export)\s[^;]*from\s+['\"]@deepseek-ai/" lib/index.js; then
+            echo "lib/index.js must not import @deepseek-ai/* at runtime" >&2
+            exit 1
+          fi
