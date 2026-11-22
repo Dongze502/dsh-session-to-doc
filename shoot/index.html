@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>session-to-doc screenshot harness</title>
+    <style>
+      :root {
+        --dsw-alias-bg-l1: #ffffff;
+        --dsw-alias-bg-l2: #f6f7f9;
+        --dsw-alias-bg-module-platform: #ffffff;
+        --dsw-alias-border-l2: rgba(0, 0, 0, 0.12);
+        --dsw-alias-label-primary: #1a1a1a;
+        --dsw-alias-label-secondary: #4a4a4a;
+        --dsw-alias-label-tertiary: #8a8a8a;
+        --dsw-alias-brand-primary: #2f7cf6;
+        --dsw-alias-scrollbar-bg-l2: rgba(0, 0, 0, 0.18);
+        --page-bg: #ffffff;
+        --composer-bg: #f2f3f5;
+      }
+      body.dark {
+        --dsw-alias-bg-l1: #17181c;
+        --dsw-alias-bg-l2: #202127;
+        --dsw-alias-bg-module-platform: #1b1c21;
+        --dsw-alias-border-l2: rgba(255, 255, 255, 0.14);
+        --dsw-alias-label-primary: #ececf1;
+        --dsw-alias-label-secondary: #b9bac4;
+        --dsw-alias-label-tertiary: #8b8d98;
+        --dsw-alias-brand-primary: #5b9dff;
+        --dsw-alias-scrollbar-bg-l2: rgba(255, 255, 255, 0.22);
+        --page-bg: #0f1013;
+        --composer-bg: #1c1d22;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--page-bg);
+        color: var(--dsw-alias-label-primary);
+        font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+      }
+      #stage { padding: 40px 48px; max-width: 900px; margin: 0 auto; }
+      .chat {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+      .bubble {
+        max-width: 72%;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 1.7;
+        background: var(--composer-bg);
+        color: var(--dsw-alias-label-primary);
+      }
+      .bubble.me {
+        align-self: flex-end;
+        background: var(--dsw-alias-brand-primary);
+        color: #fff;
+      }
+      .composer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--dsw-alias-border-l2);
+        background: var(--dsw-alias-bg-l1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      }
+      .grow { flex: 1; }
+      .placeholder {
+        color: var(--dsw-alias-label-tertiary);
+        font-size: 14px;
+      }
+      .send {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        border: none;
+        background: var(--dsw-alias-brand-primary);
+        color: #fff;
+        font-size: 14px;
+      }
+      #root { display: inline-flex; }
+    </style>
+  </head>
+  <body>
+    <div id="stage">
+      <div class="chat">
+        <div class="bubble me">把刚才这段讨论整理成一份文档，简洁一点</div>
+        <div class="bubble">整理好了：按主题重新组织，不是按对话顺序。</div>
+      </div>
+      <div class="composer">
+        <div class="grow placeholder">给 DeepSeek Harness 发消息…</div>
+        <div id="root"></div>
+        <button class="send" type="button">↑</button>
+      </div>
+    </div>
+    <script src="react.production.min.js"></script>
+    <script src="react-dom.production.min.js"></script>
+    <script>window.__loaded = {}; window.__ModuleLoader__ = { load: r => { window.__loaded.registration = r } }</script>
+    <script src="client.js"></script>
+    <script src="harness.js"></script>
+  </body>
+</html>

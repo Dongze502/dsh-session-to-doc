@@ -2,3 +2,10 @@ node_modules/
 .pnpm-store/
 .pnpm-cache/
 *.tsbuildinfo
+
+# Local release staging and screenshot build inputs.
+dist/
+shoot/client.js
+shoot/react.production.min.js
+shoot/react-dom.production.min.js
+shoot/shot-*.png

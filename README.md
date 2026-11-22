@@ -7,6 +7,19 @@
 
 把当前会话中一段又长又散的对话，**重新组织**成一份带大纲、章节层级和目录的结构化 Markdown 文档——而不是按时间顺序原样导出。
 
+适合这些场景：**把讨论整理成交付文档**、从长对话里**导出 Markdown 存档**、把一次**需求评审 / 会议纪要**变成有章节的稿子、给对话生成**可跳转的目录（TOC、大纲）**。如果你的会话经常“先聊 A、岔到 B、又回 A”，这个插件会按主题合并，而不是按时间铺开。
+
+![输入框下方的「整理成文档」按钮](assets/screenshot-1.png)
+
+![整理结果：带 TOC 的 Markdown 文档](assets/screenshot-2.png)
+
+<details>
+<summary>深色主题下的同一面板</summary>
+
+![深色主题](assets/screenshot-3.png)
+
+</details>
+
 这是一个 DSH（DeepSeek Harness）插件，同时提供三种入口，三者共用同一套编排代码：
 
 1. **模型工具** `session_to_doc` —— 用户说“整理成文档”时由模型调用；

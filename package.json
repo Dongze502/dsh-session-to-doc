@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-to-doc",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "DSH plugin: reorganize the current session transcript into a structured Markdown document with an outline and table of contents — as a model tool, a composer button, and a Web endpoint.",
   "license": "MIT",
   "author": "dsh-session-to-doc contributors",
